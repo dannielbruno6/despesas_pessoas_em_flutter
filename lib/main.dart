@@ -53,7 +53,7 @@ class MyHomePage extends StatelessWidget {
                     margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                     decoration: BoxDecoration(
                       border: Border.all(
-                        color: Colors.purple,
+                        color: Colors.blue,
                             width: 2,
                       )
                     ),
@@ -64,7 +64,7 @@ class MyHomePage extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.purple
+                        color: Colors.blue
                       ),
 
                     ),
@@ -75,14 +75,14 @@ class MyHomePage extends StatelessWidget {
                       Text(tr.title,
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 16,
+                            fontSize: 20,
                             color: Colors.black
                         ),
                       ),
                       Text(tr.date.toString(),
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                            fontSize: 16,
                             color: Colors.blueGrey
                         ),),
                     ],
