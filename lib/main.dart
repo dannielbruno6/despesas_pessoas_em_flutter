@@ -83,7 +83,7 @@ class MyHomePage extends StatelessWidget {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 16,
-                            color: Colors.blueGrey
+                            color: Colors.pink
                         ),),
                     ],
                   )
