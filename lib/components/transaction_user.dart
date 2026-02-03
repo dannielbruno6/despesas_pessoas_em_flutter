@@ -14,8 +14,6 @@ class TransactionUser extends StatefulWidget {
 class _State extends State<TransactionUser> {
 
   final _transactions = [
-    Transaction(id: 't1', title: 'compra sapato', value: 79.00, date: DateTime.now()),
-    Transaction(id: 't2', title: 'compra mercado', value: 132.45, date: DateTime.now()),
     Transaction(id: 't3', title: 'pagamento de conta', value: 744, date: DateTime.now())
   ];
 
