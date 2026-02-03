@@ -1,7 +1,5 @@
-
 import '../components/transaction_user.dart';
 import 'package:flutter/material.dart';
-
 
 main() => runApp(MyHomePage());
 
@@ -15,12 +13,6 @@ class ExpensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
-
-
-
-
-
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,27 +22,19 @@ class MyHomePage extends StatelessWidget {
           title: Center(child: Text("Despesas pessoais")),
         ),
         body: Column(
-
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
-
               child: Card(
                 child: Text('Grafico'),
                 elevation: 5,
                 color: Colors.black12,
               ),
             ),
-
-
             TransactionUser(),
-
-            ],
-            ),
-            ),
-
-
-
+          ],
+        ),
+      ),
     );
   }
 }
