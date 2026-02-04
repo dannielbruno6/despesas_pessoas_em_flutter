@@ -1,7 +1,11 @@
-import '../components/transaction_user.dart';
 import 'package:flutter/material.dart';
+import'../components/transaction_form.dart';
+import'../components/transaction_list.dart';
+import 'models/transaction.dart';
+import 'dart:math';
 
-main() => runApp(MyHomePage());
+void main() => runApp(const ExpensesApp());
+
 
 class ExpensesApp extends StatelessWidget {
   const ExpensesApp({super.key});
@@ -12,14 +16,53 @@ class ExpensesApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  final _transactions = [
+    Transaction(id: 't3', title: 'pagamento de conta', value: 744, date: DateTime.now()),
+
+
+
+
+  ];
+
+  _addTransaction(String title, double value){
+    final newTransaction = Transaction(
+      id: Random().nextDouble().toString(),
+      title: title,
+      value: value,
+      date: DateTime.now(),
+    );
+    setState(() {
+      _transactions.add(newTransaction);
+    });
+  }
+  _openTransactionFormModal(BuildContext context) {
+    showModalBottomSheet(
+        context: context,
+        builder: (_) {
+          return TransactionForm(null);
+        }
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
+    return  Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.blue,
           title: Center(child: Text("Despesas pessoais")),
+          actions: [
+            IconButton(
+              onPressed: () => _openTransactionFormModal(context),
+              icon: Icon(Icons.add),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
@@ -32,11 +75,18 @@ class MyHomePage extends StatelessWidget {
                   color: Colors.black12,
                 ),
               ),
-              TransactionUser(),
+              TransactionList(_transactions),
+
+
             ],
           ),
         ),
-      ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => _openTransactionFormModal(context),
+          child: Icon(Icons.add),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+
     );
   }
 }
