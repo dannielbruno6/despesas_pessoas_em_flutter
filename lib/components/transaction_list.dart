@@ -20,7 +20,8 @@ class TransactionList extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                   decoration: BoxDecoration(
-                    border: Border.all(color: Colors.blue, width: 2),
+                    border: Border.all(color: Theme.of(context).colorScheme.primary,
+                        width: 2),
                   ),
                   padding: EdgeInsets.all(10),
 
@@ -29,8 +30,9 @@ class TransactionList extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 20,
-                      color: Colors.blue,
-                    ),
+                      color:  Theme.of(context).colorScheme.primary,
+
+                  ),
                   ),
                 ),
                 Column(
@@ -50,7 +52,7 @@ class TransactionList extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 16,
-                        color: Colors.pink,
+                        color: Colors.black38,
                       ),
                     ),
                   ],
