@@ -1,6 +1,7 @@
 import '../models/transaction.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'chart_bar.dart';
 
 class Chart extends StatefulWidget {
   final List<Transaction>recentTransaction;
@@ -29,8 +30,7 @@ class _ChartState extends State<Chart> {
         }
       }
 
-      // apenas debug no terminal
-      print('${DateFormat.E().format(weekDayDate)[0]}: $totalSum');
+
 
       return {
         'day': DateFormat.E().format(weekDayDate)[0],
@@ -45,7 +45,15 @@ class _ChartState extends State<Chart> {
     return Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
-      child: Row(children: []),
+      child: Row(children:
+      groupedTransactions.map((tr) {
+        return ChartBar(
+            label: tr['day'] as String,
+            value: tr['value'] as double,
+            percentage: 0,
+        );
+      }).toList(),
+      ),
     );
   }
 }
